@@ -21,9 +21,9 @@ class GamesController < ApplicationController
     @score = (params[:guess].length / ((@end_time - Time.parse(@start_time)) / 60_000)).round
   end
 
-  def create
-    session[:current_user_id] = @user.id
-  end
+  # def create
+  #   session[:current_user_id] = @user.id
+  # end
 
   def check_grid?(letters, word)
     word.chars.each do |letter|
