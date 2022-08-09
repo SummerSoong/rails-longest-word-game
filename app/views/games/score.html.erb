@@ -1,0 +1,13 @@
+<% if @check_grid == false %>
+  <p>Sorry but Test can't be built out of
+    <%= params[:letters].split().join(',')%>
+  </p>
+<% elsif @check_english_word == false %>
+  <p>Sorry but params <%= params[:guess] %> does not seem to be a valid English word... </p>
+<% elsif @check_grid && @check_english_word %>
+  <p>Congratulations! <%= params[:guess] %> is a valid English word!</p>
+<% end %>
+
+<p>Your score is <%= @score %></p>
+
+<%= link_to"Play again", new_path %>
